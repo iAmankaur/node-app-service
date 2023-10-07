@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 
 //http://localhost:3000/
 app.get('/', function (req, res) {
-    res.send("<h1>Home Page</h1>")
+    res.send("<h1>Home page</h1>")
 })
 
 //http://localhost:3000/profile
@@ -39,4 +39,8 @@ app.get("/valueofday/:year(\\d{4})-:month(\\d{2})-:day(\\d{2})", (req, res) => {
   
 app.listen(process.env.PORT  || SERVER_PORT, () => {
     console.log(`Server running at http://${SERVER_HOST}:${SERVER_PORT}/`);
+})
+
+app.get("/name",(req, res)=>{
+  res.send("<h1>Aman</h1>");
 })
